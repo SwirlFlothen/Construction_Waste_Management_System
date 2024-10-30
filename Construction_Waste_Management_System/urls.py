@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from MuntasirApp import views as M_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', M_views.Home,name='Home'),
+    path('Services/', M_views.Services, name='Services'),
+    path('Services_details/', M_views.Services_details, name='Services_details'),
 ]
