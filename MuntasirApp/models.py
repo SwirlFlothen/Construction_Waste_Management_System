@@ -11,6 +11,8 @@ class users(models.Model):
         return self.user_name
 
 
+
+
 class project(models.Model):
     project_id = models.IntegerField(blank=True, null=True)
     user_id = models.ForeignKey(users,on_delete=models.CASCADE,blank=True,null=True)
@@ -20,6 +22,19 @@ class project(models.Model):
 
     def __str__(self):
         return self.project_name
+
+
+
+class WasteReport(models.Model):
+        report_id = models.IntegerField(blank=True, null=True)
+        project_id = models.ForeignKey(project, on_delete=models.CASCADE, blank=True, null=True)
+        waste_generated = models.FloatField(blank=True, null=True)
+        waste_recycled = models.FloatField(blank=True, null=True)
+        waste_disposed = models.FloatField(blank=True, null=True)
+        environmental_impact = models.CharField(max_length=200)
+
+        def __str__(self):
+            return self.report_id
 
 
 
