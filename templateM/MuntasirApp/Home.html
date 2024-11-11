@@ -52,4 +52,37 @@
   </tbody>
 </table>
 
+<br>
+<br>
+<br>
+<br>
+
+<h2>Waste Report Table</h2>
+<table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Report Id</th>
+      <th scope="col">Project Id</th>
+      <th scope="col">Waste Generated</th>
+      <th scope="col">Waste Recycled</th>
+      <th scope="col">Waste Disposed</th>
+       <th scope="col">Environmental Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for p in object_wreport%}
+    <tr>
+      <td>{{p.report_id}}</td>
+       <td>{{p.project_id}}</td>
+      <td>{{p.waste_generated}}</td>
+      <td>{{p.waste_recycled}}</td>
+       <td>{{p.waste_disposed}}</td>
+      <td>{{p.environmental_impact}}</td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
 {% endblock %}
+
