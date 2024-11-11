@@ -2,6 +2,7 @@
 {% block content %}
 
 <h1> Home Page</h1>
+<h2>User Table</h2>
 <table class="table">
   <thead>
     <tr>
@@ -17,6 +18,35 @@
       <td>{{p.user_id}}</td>
       <td>{{p.user_name}}</td>
       <td>{{p.email}}</td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+
+<h2>Project Table</h2>
+<table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Project ID</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Project Name</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Estimated Waste</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for p in object_project%}
+    <tr>
+      <td>{{p.project_id}}</td>
+       <td>{{p.user_id}}</td>
+      <td>{{p.project_name}}</td>
+      <td>{{p.duration}}</td>
+       <td>{{p.estimated_waste}}</td>
     </tr>
   {%endfor%}
   </tbody>
