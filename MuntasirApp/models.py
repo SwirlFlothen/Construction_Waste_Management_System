@@ -34,7 +34,7 @@ class WasteReport(models.Model):
         environmental_impact = models.CharField(max_length=200)
 
         def __str__(self):
-            return self.report_id
+            return str(self.report_id)
 
 
 
